@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy, :cards]
 
   # GET /tweets
   # GET /tweets.json
@@ -21,6 +21,9 @@ class TweetsController < ApplicationController
   def edit
   end
 
+  def card
+    @tweets = Tweet.all
+  end
   # POST /tweets
   # POST /tweets.json
   def create
